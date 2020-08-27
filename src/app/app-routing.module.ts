@@ -15,7 +15,6 @@ export const routes: Routes = [
       .then(m => m.AuthsModule),
   },
   { path: '', redirectTo: 'report-web/pages', pathMatch: 'full' },
-  { path: '/report-web', redirectTo: 'report-web/pages', pathMatch: 'full' },
   { path: 'report-web', redirectTo: 'report-web/pages', pathMatch: 'full' },
   { path: '**', redirectTo: 'report-web/pages' },
   { path: 'report-web/auths', redirectTo: 'report-web/auths/login', pathMatch: 'full' },
