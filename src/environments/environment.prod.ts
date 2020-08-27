@@ -10,5 +10,5 @@ export const environment = {
    url: 'https://hieuatomta.github.io/report-web',
 
   // api_url: 'http://localhost:8083/api',
-  // url: 'http://localhost:4200',
+  // url: 'http://localhost:4200/report-web',
 };

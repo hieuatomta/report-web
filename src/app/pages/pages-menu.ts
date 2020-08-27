@@ -107,18 +107,18 @@ export const menuRole = [
   },
   {
     code: 'ADMIN_USER',
-    link: '/pages/users',
+    link: '/report-web/pages/users',
   },
   {
     code: 'ADMIN_ROLE',
-    link: '/pages/permission-management',
+    link: '/report-web/pages/permission-management',
   },
   {
     code: 'ADMIN_MODULE',
-    link: '/pages/modules',
+    link: '/report-web/pages/modules',
   },
   {
     code: 'ADMIN_ACTION',
-    link: '/pages/actions',
+    link: '/report-web/pages/actions',
   },
 ];
