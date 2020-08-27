@@ -25,8 +25,8 @@ export class AuthGuardService implements CanActivate {
           checkRole = true;
         }
       }
-      if (location.pathname === '/pages/home' || location.pathname === '/'
-        || location.pathname === '/pages' || location.pathname ===  '/auths/login') {
+      if (location.pathname === 'report-web/pages/home' || location.pathname === '/'
+        || location.pathname === 'report-web/pages' || location.pathname ===  'report-web/auths/login') {
         return true;
       }
       if (!checkRole) {
