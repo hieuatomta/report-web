@@ -16,6 +16,7 @@
     "build": "ng build",
     "build:prod": "npm run build -- --prod --aot",
     "build:deploy": "node --max_old_space_size=4096 node_modules/@angular/cli/bin/ng build --prod --aot  --base-href /mic/",
+    "deploy": "ng build --prod --base-href https://hieuatomta.github.io/report-web/ && angular-cli-ghpages --branch gh-pages",
     "test": "ng test",
     "test:coverage": "rimraf coverage && npm run test -- --code-coverage",
     "lint": "ng lint",
