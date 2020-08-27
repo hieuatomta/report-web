@@ -1,0 +1,59 @@
+<div class="wrapper-login"  [nbSpinner]="isLoad" nbSpinnerSize="giant" nbSpinnerStatus="primary" style="background-image: url('/assets/images/bg.jpg');">
+  <div class="bg" style="background-image: url('/assets/images/bg.jpg');"></div>
+  <div class="box-login">
+    <div class="head" style="background-color: white;padding: 30px;">
+
+      <div class="logo">
+        <img src="/assets/images/quoc_huy.png">
+      </div>
+
+      <div class="logo-text">Hệ thống thông tin báo cáo <br>Bộ, Ngành, Địa phương</div>
+
+    </div>
+    <div class="body">
+      <form (ngSubmit)="onSubmit()" [formGroup]="inputUser" class="login100-form validate-form">
+        <!--      <form method="POST"  id="formLogin" action="/ioc/servlet/login.ValidateUser" name="FormName">-->
+        <input type="hidden" name="csrfPreventionSalt" value="QCl8GyurMsXbxiWqvkcs"/>
+        <div class="form-group">
+          <div class="input-icon">
+            <input class="form-control" formControlName="userName" (keyup)="trimValue($event)"
+                   [ngClass]="{'status-danger': this.inputUser.get('userName').errors}" type="text" placeholder="Tên đăng nhập">
+            <!--            <input id="login-username" name="txtName" class="form-control" type="text" placeholder="Tên đăng nhập" />-->
+            <span class="icon"><img src="/assets/images/business-contact-86.svg"></span>
+          </div>
+
+        </div>
+        <div class="invalid-feedback"  style="display: flex;"
+             *ngIf="this.inputUser.get('userName').errors && (this.inputUser.get('userName').touched || submitted) ">
+          {{ getError('userName') }}
+        </div>
+        <div class="form-group">
+          <div class="input-icon -show">
+            <input [type]="getInputType()" (keyup)="trimValue($event)" fullWidth formControlName="passwordHash" type="password"  class="form-control"  placeholder="Mật khẩu" [ngClass]="{'status-danger': this.inputUser.get('passwordHash').errors}">
+
+            <span class="icon"><img src="/assets/images/lock.svg"></span>
+            <span id="passwordShow" (click)="toggleShowPassword()" class="icon-show fa  fa-eye" style="margin-right:1em;">
+								</span>
+          </div>
+
+        </div>
+        <div class="invalid-feedback" style="display: flex;"
+             *ngIf="this.inputUser.get('passwordHash').errors && ( this.inputUser.get('passwordHash').touched || submitted )">
+          {{ getError('passwordHash') }}
+        </div>
+        <div class="form-group form-check" style="margin-top: 0.5rem;">
+          <input type="checkbox" formControlName="acceptTerms" id="acceptTerms" class="form-check-input"  />
+          <label for="acceptTerms" class="form-check-label">Ghi nhớ mật khẩu</label>
+        </div>
+        <div class="actions center" >
+          <button class="btn btn-main" >Đăng nhập</button>
+          <button class="btn btn-main btn-secondary" type="reset" (click)="onReset()">Nhập lại</button>
+          <ul class="links" style="text-align: right">
+            <li><a href="auths/changePass">Đổi mật khẩu</a></li>
+            <li><a href="auths/confirmEmail">Quên mật khẩu</a></li>
+          </ul>
+        </div>
+      </form>
+    </div>
+  </div>
+

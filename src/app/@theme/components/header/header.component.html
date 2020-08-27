@@ -1,0 +1,22 @@
+<div class="header-container">
+  <div class="logo-container">
+    <a (click)="toggleSidebar()" href="#" class="sidebar-toggle">
+      <nb-icon icon="menu-2-outline"></nb-icon>
+    </a>
+    <a class="logo" href="#" (click)="navigateHome()">HỆ THỐNG THÔNG TIN BÁO CÁO BỘ NGÀNH ĐỊA PHƯƠNG</a>
+  </div>
+</div>
+
+<div class="header-container">
+
+  <nb-actions  size="small">
+    <nb-action class="user-action text-basic-color"   *nbIsGranted="['view', 'user','logout']" >
+      <nb-user [nbContextMenu]="userMenu"
+               (menuClick)="menuClick($event)"
+               [onlyPicture]="userPictureOnly"
+               [name]="user"
+               [picture]="user?.picture">
+      </nb-user>
+    </nb-action>
+  </nb-actions>
+</div>

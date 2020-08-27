@@ -1,0 +1,89 @@
+<div class="wrapper-login" [nbSpinner]="isLoad" nbSpinnerSize="giant" nbSpinnerStatus="primary"
+     style="background-image: url('/assets/images/bg.jpg');">
+  <div class="bg" style="background-image: url('/assets/images/bg.jpg');"></div>
+  <div class="box-login">
+    <div class="head" style="background-color: white;padding: 30px;">
+
+      <div class="logo">
+        <img src="/assets/images/quoc_huy.png">
+      </div>
+
+      <div class="logo-text">Hệ thống thông tin báo cáo <br>Bộ, Ngành, Địa phương</div>
+
+    </div>
+    <div class="body">
+      <form (ngSubmit)="onSubmit()" [formGroup]="inputUser" class="login100-form validate-form">
+        <input type="hidden" name="csrfPreventionSalt" value="QCl8GyurMsXbxiWqvkcs"/>
+        <div class="form-group">
+          <div class="input-icon">
+            <input class="form-control" formControlName="userName"
+                   [ngClass]="{'status-danger': this.inputUser.get('userName').errors}" type="text"
+                   placeholder="Tên đăng nhập">
+            <span class="icon"><img src="/assets/images/business-contact-86.svg"></span>
+          </div>
+          <div class="invalid-feedback" style="display: flex;"
+               *ngIf="this.inputUser.get('userName').errors && (this.inputUser.get('userName').touched || submitted) ">
+            {{ getError('userName') }}
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-icon -show">
+            <input [type]="getInputType(1)" formControlName="oldPass"
+                   [ngClass]="{'status-danger': this.inputUser.get('oldPass').errors}" type="password"
+                   class="form-control" placeholder="Mật khẩu cũ">
+
+            <span class="icon"><img src="/assets/images/lock.svg"></span>
+            <span id="passwordShow" (click)="toggleShowPassword(1)" class="icon-show fa  fa-eye"
+                  style="margin-right:1em;">
+								</span>
+          </div>
+          <div class="invalid-feedback" style="display: flex;"
+               *ngIf="this.inputUser.get('oldPass').errors && ( this.inputUser.get('oldPass').touched || submitted )">
+            {{ getError('oldPass') }}
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <div class="input-icon -show">
+            <input [type]="getInputType(2)" formControlName="newPass" type="password" class="form-control"
+                   placeholder="Mật khẩu mới" [ngClass]="{'status-danger': this.inputUser.get('newPass').errors}">
+
+            <span class="icon"><img src="/assets/images/lock.svg"></span>
+            <span class="icon-show fa  fa-eye" (click)="toggleShowPassword(2)" style="margin-right:1em;">
+								</span>
+          </div>
+          <div class="invalid-feedback" style="display: flex;"
+               *ngIf="this.inputUser.get('newPass').errors && ( this.inputUser.get('newPass').touched || submitted )">
+            {{ getError('newPass') }}
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <div class="input-icon -show">
+            <input [type]="getInputType(3)" formControlName="comPass" type="password" class="form-control"
+                   placeholder="Nhập lại mật khẩu" [ngClass]="{'status-danger': this.inputUser.get('comPass').errors}">
+
+            <span class="icon"><img src="/assets/images/lock.svg"></span>
+            <span class="icon-show fa  fa-eye" (click)="toggleShowPassword(3)" style="margin-right:1em;">
+								</span>
+          </div>
+          <div class="invalid-feedback" style="display: flex;"
+               *ngIf="this.inputUser.get('comPass').errors && (this.inputUser.get('comPass').touched || submitted )">
+            {{ getError('comPass') }}
+          </div>
+        </div>
+
+
+        <div class="actions center" style="margin-top: 2em;">
+          <button class="btn btn-main">Đổi mật khẩu</button>
+          <ul class="links" style="text-align: center">
+            <li><a href="auths/login">Đăng nhập</a></li>
+          </ul>
+        </div>
+      </form>
+    </div>
+  </div>
+

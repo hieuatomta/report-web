@@ -1,0 +1,6 @@
+<nb-card style="height: 100%" fullWidth [ngClass]="{'margin-left-popup': !isCollapse}">
+  <nb-card-header class="card-header-title">Quyền: {{ data.name }}</nb-card-header>
+  <nb-card-body>
+    <ngx-treeview [config]="treeViewConfig" [(ngModel)]="dataChoose" [items]="dataItems"></ngx-treeview>
+  </nb-card-body>
+</nb-card>

@@ -1,0 +1,33 @@
+<div class="wrapper-login" style="background-image: url('/assets/images/bg.jpg');"  [nbSpinner]="isLoad" nbSpinnerSize="giant" nbSpinnerStatus="primary">
+  <div class="bg" style="background-image: url('/assets/images/bg.jpg');"></div>
+  <div class="box-login" >
+    <div class="head" style="background-color: white;padding: 30px;">
+
+      <div class="logo">
+        <img src="/assets/images/quoc_huy.png">
+      </div>
+
+      <div class="logo-text">Hệ thống thông tin báo cáo <br>Bộ, Ngành, Địa phương</div>
+
+    </div>
+    <div class="body">
+      <form (ngSubmit)="onSubmit()" [formGroup]="inputUser" class="login100-form validate-form">
+        <input type="hidden" name="csrfPreventionSalt" value="QCl8GyurMsXbxiWqvkcs"/>
+        <div class="form-group">
+          <div class="input-icon">
+            <input class="form-control" formControlName="email"
+                   [ngClass]="{'status-danger': this.inputUser.get('email').errors}" type="text" placeholder="Nhập địa chỉ Email">
+            <span class="icon" style="width: 18px;"><img src="/assets/images/gmail.svg"></span>
+          </div>
+
+        </div>
+        <div class="invalid-feedback"  style="display: flex;" *ngIf="  this.inputUser.get('email').errors && (this.inputUser.get('email').touched || submitted) ">
+          {{ getError('email') }}
+        </div>
+        <div class="actions center" style="margin-top: 2em;">
+          <button class="btn btn-main">Gửi email</button>
+        </div>
+      </form>
+    </div>
+  </div>
+

@@ -1,0 +1,17 @@
+@import '../../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  input {
+    width: 100%;
+  }
+
+  .save {
+    border: 1px solid #00000040 !important;
+    margin-right: 2%
+  }
+
+  .cancel {
+    margin-left: 1rem;
+    border: 1px solid #00000040 !important;
+  }
+}
