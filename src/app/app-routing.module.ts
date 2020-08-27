@@ -4,7 +4,7 @@ import {AuthGuardService} from './@core/mock/auth-guard.service';
 
 export const routes: Routes = [
   {
-    canActivate: [AuthGuardService],
+    // canActivate: [AuthGuardService],
     path: 'pages',
     loadChildren: () => import('./pages/pages.module')
       .then(m => m.PagesModule),
@@ -15,7 +15,7 @@ export const routes: Routes = [
       .then(m => m.AuthsModule),
   },
   { path: '', redirectTo: 'pages', pathMatch: 'full' },
-  { path: '**', redirectTo: 'pages' },
+  // { path: '**', redirectTo: 'pages' },
   { path: 'auths', redirectTo: 'auths/login', pathMatch: 'full' },
 
 ];

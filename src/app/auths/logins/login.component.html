@@ -1,5 +1,5 @@
-<div class="wrapper-login"  [nbSpinner]="isLoad" nbSpinnerSize="giant" nbSpinnerStatus="primary" style="background-image: url('/assets/images/bg.jpg');">
-  <div class="bg" style="background-image: url('/assets/images/bg.jpg');"></div>
+<div class="wrapper-login"  [nbSpinner]="isLoad" nbSpinnerSize="giant" nbSpinnerStatus="primary" style="background-image: url('/report-web/assets/images/bg.jpg');">
+  <div class="bg" style="background-image: url('/report-web/assets/images/bg.jpg');"></div>
   <div class="box-login">
     <div class="head" style="background-color: white;padding: 30px;">
 
@@ -19,7 +19,7 @@
             <input class="form-control" formControlName="userName" (keyup)="trimValue($event)"
                    [ngClass]="{'status-danger': this.inputUser.get('userName').errors}" type="text" placeholder="Tên đăng nhập">
             <!--            <input id="login-username" name="txtName" class="form-control" type="text" placeholder="Tên đăng nhập" />-->
-            <span class="icon"><img src="/assets/images/business-contact-86.svg"></span>
+            <span class="icon"><img src="/report-web/assets/images/business-contact-86.svg"></span>
           </div>
 
         </div>
@@ -31,7 +31,7 @@
           <div class="input-icon -show">
             <input [type]="getInputType()" (keyup)="trimValue($event)" fullWidth formControlName="passwordHash" type="password"  class="form-control"  placeholder="Mật khẩu" [ngClass]="{'status-danger': this.inputUser.get('passwordHash').errors}">
 
-            <span class="icon"><img src="/assets/images/lock.svg"></span>
+            <span class="icon"><img src="/report-web/assets/images/lock.svg"></span>
             <span id="passwordShow" (click)="toggleShowPassword()" class="icon-show fa  fa-eye" style="margin-right:1em;">
 								</span>
           </div>
