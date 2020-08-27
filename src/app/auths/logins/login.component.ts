@@ -68,7 +68,7 @@ export class LoginComponent implements OnInit {
       this.http.post('/login', this.inputUser.value).subscribe(res => {
         this.submitted = false;
         if (res.status === 200) {
-          window.location.href = res.body.path;
+          window.location.href = 'https://hieuatomta.github.io/report-web/pages/home';
           // this.router.navigate([res.body.path]);
 
           localStorage.setItem('objects', JSON.stringify(res.body.listObjects));
